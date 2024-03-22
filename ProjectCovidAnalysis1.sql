@@ -9,7 +9,7 @@ from CovidDeaths
 where location like '%olombia%'
 order by 2
 
---Convertir Columna de Varchar a Int
+--Convert Column from Varchar to Numeric and Float
 
 ALTER TABLE CovidDeaths
 ALTER COLUMN total_cases float;
@@ -46,7 +46,7 @@ where continent is not null
 group by location
 order by 2 desc
 
---Let break thigns down by continent
+--Lets break thigns down by continent
 
 select continent, MAX(Total_Deaths) as TotalDeaths
 from CovidDeaths
@@ -54,7 +54,7 @@ where continent is not null
 group by continent
 order by 2 desc
 
---Showing the cotinet with the Highest death count per population
+--Showing the cotinent with the Highest death count per population
 
 select continent, population, max(total_deaths) as HighestTotalCases, max((total_deaths/population))*100 as DeathRate
 from CovidDeaths
